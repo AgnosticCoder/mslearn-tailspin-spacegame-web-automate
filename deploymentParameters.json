@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deployPrefix": {
+            "value": "-dev-"
+        },
+        "keyVaultName": {
+          "value": "tail-vault-29551"
+        },
+        "uniqueSuffix": {
+            "value": "29551"
+        },
+        "adminPassword": {
+            "reference": {
+              "keyVault": {
+                "id": "/subscriptions/0f1e8fa9-d69a-44ca-a34b-ebd5fda5a351/resourceGroups/tail-rg-1/providers/Microsoft.KeyVault/vaults/tail-vault-29551"
+              },
+              "secretName": "adminPassword"
+            }
+        },
+        "firstRun": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/0f1e8fa9-d69a-44ca-a34b-ebd5fda5a351/resourceGroups/tail-rg-1/providers/Microsoft.KeyVault/vaults/tail-vault-29551"
+                },
+                "secretName": "firstRun"
+            }
+        }
+    }
+}
